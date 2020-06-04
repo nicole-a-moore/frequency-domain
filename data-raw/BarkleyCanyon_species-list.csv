@@ -1,0 +1,26 @@
+higher_tax_extracted,genus_extracted,species_extracted,genus,species,improvised_YN,lifespan_days,lifespan_days_source
+NA,Anoplopoma,fimbria,Anoplopoma,fimbria,N,6753,17-20 years - https://www.worldlifeexpectancy.com/fish-life-expectancy-sablefish
+NA,Eptatretus,sp.,Eptatretus,stoutii,Y,14600,40 years - https://animaldiversity.org/accounts/Eptatretus_stoutii/#lifespan_longevity
+Agonidae,NA,NA,Agonus,cataphractus,Y,1095,3 years - https://www.worldlifeexpectancy.com/fish-life-expectancy-hooknose
+Zoarcidae,NA,NA,Zoarces,americanus,Y,6570,18 years - https://www.worldlifeexpectancy.com/fish-life-expectancy-ocean-pout
+NA,Coryphaenoides,sp.,Coryphaenoides,acropelis,Y,26645,73 years - http://genomics.senescence.info/species/entry.php?species=Coryphaenoides_acrolepis
+NA,Sebastolobus,sp.,Sebastolobus,alascanus,Y,41975,115 years - http://genomics.senescence.info/species/entry.php?species=Sebastolobus_alascanus
+NA,Sebastolobus,sp.,Sebastolobus,altivelis,Y,25915,71 years - https://www.sararegistry.gc.ca/virtual_sara/files/cosewic/sr_sebastolobus_altivelis_e.pdf
+NA,Chionoecetes,tanneri,Chionoecetes,tanneri,N,3285,9 years - https://www.researchgate.net/profile/Graham_Gillespie/publication/288915255_Development_of_a_new_fishery_for_Tanner_crabs_Chionoecetes_tanneri_Rathbun_1893_off_British_Columbia_2003_status_report/links/5a287016a6fdcc8e8671b7d7/Development-of-a-new-fishery-for-Tanner-crabs-Chionoecetes-tanneri-Rathbun-1893-off-British-Columbia-2003-status-report.pdf
+NA,Paralomis,verrilli,Paralomis,verrilli,N,unk,
+Brachyura u. i.,NA,NA,Metacarcinus,magister,Y,3650,"10 years - https://www.dfw.state.or.us/mrp/shellfish/crab/lifehistory.asp#:~:text=Dungeness%20crab%20are%20relatively%20short,inches%20wide%20across%20their%20carapace. "
+Galatheoidea 1,NA,NA,Munida,intermedia,Y,1460,4 years - https://www.tandfonline.com/doi/abs/10.1080/00222939800771091?casa_token=RrmFUcsVcHwAAAAA:G1azQoBedEl7g9eiybIgSKwFiqEsxDjilCVelvsE1Q-B4t38kGXj7g4NOlMOBCiCXViw5s1z76KaOQ
+NA,Munidopsis,quadrata,Munidopsis,quadrata,N,unk,
+NA,Heptacarpus,sp.,Heptacarpus,pictus,Y,426,"18 months - https://www.tandfonline.com/doi/abs/10.1080/00222937600770321?journalCode=tnah20#:~:text=Heptacarpus%20pictus%2C%20a%20small%20caridean,most%20likely%20source%20of%20mortality."
+Caridea,NA,NA,NA,NA,Y,1278,1-6 years - https://en.wikipedia.org/wiki/Caridea
+Pandaloidea,NA,NA,Pandalus,NA,Y,1460,"3-5 years - https://en.wikipedia.org/wiki/Pandalus#:~:text=Their%20lifespan%20is%20typically%20three,males%20and%20later%20becoming%20females."
+Paguroidea,NA,NA,Pagurus,brevidactylus,Y,639,1.5-2 years - https://www.scielo.br/scielo.php?pid=S0104-64972019000100300&script=sci_arttext
+NA,Buccinum,viridum,Buccinum,undatum,Y,3650,"10 years - http://www.fao.org/fishery/species/2659/en#:~:text=Whelks%20have%20a%20fairly%20long,moderate%20or%20cold%20sea%20temperatures."
+Gastropoda,NA,NA,NA,NA,Y,unk,
+Cirripedia,NA,NA,NA,NA,Y,2738,"5-10 years - https://a-z-animals.com/animals/barnacle/#:~:text=Barnacles%20typically%20live%20for%20between,larvae%20stage%20of%20their%20lives."
+Asteriidae,NA,NA,Pisaster,ochraceus,Y,12410,34 years - https://scienceforecastoa.com/Articles/SJBBE-V1-E2-1007.pdf
+Hippasterinae,NA,NA,NA,NA,Y,unk,
+Pannychiamoseleyi,NA,NA,NA,NA,Y,unk,
+NA,Poralia,rufescens,Poralia,rufescens,N,unk,
+Scyphozoa,NA,NA,NA,NA,Y,365,"1 year - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4495463/#:~:text=Medusae%20grow%20rapidly%20through%20summer,than%20one%20year8%2C14."
+Ctenophores,NA,NA,NA,NA,Y,563,1 month-3 years - https://animaldiversity.org/accounts/Ctenophora/#lifespan_longevity

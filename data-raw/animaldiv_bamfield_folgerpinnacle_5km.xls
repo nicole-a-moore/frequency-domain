@@ -1,0 +1,822 @@
+
+<TABLE>
+  <TR>
+		<th>Scientific Name</th>
+		<th>English Name</th>
+		<th>Survey Type</th>
+		<th>Latitude (&deg;)</th>
+		<th>Longitude (&deg;)</th>
+        <th>Latitude (&deg; Min)</th>
+        <th>Longitude (&deg; Min)</th>
+		<th>Location</th>
+		<th>Date</th>
+		<th># Collected</th>
+		<th>Height\Depth</th>
+		<th>Pop Estimate</th>
+		<th>Exposure</th>
+        <th>Operation Type</th>
+        <th>Profile</th>
+        <th>Substrate</th>
+        <th>Habitat Type</th>
+        <th>Depth</th>
+        <th>Equipment</th>
+        <th>IDs</th>
+  </TR>
+              <TR>
+            <TD>Crangon</TD>
+            <TD >&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.833333&nbsp;</TD>
+            <TD >-125.233333&nbsp;</TD>
+            <TD >48&deg; 50' N&nbsp;</TD>
+            <TD >125&deg; 14' W&nbsp;</TD>
+            <TD >Hammond Passage&nbsp;</TD>
+            <TD >1999-05-24&nbsp;</TD>
+            <TD>1</TD>
+            <TD>Shallow subtidal (0m to -20m)</TD>
+            <TD>Undetermined</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>615//4073/3753/7906</td>
+          </TR>
+             <TR>
+            <TD>Orthopagurus minimus</TD>
+            <TD >Toothshell Hermit&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.833333&nbsp;</TD>
+            <TD >-125.233333&nbsp;</TD>
+            <TD >48&deg; 50' N&nbsp;</TD>
+            <TD >125&deg; 14' W&nbsp;</TD>
+            <TD >Hammond Passage&nbsp;</TD>
+            <TD >1998-05-22&nbsp;</TD>
+            <TD>3</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>614//3937/3606/8160</td>
+          </TR>
+             <TR>
+            <TD>Orthopagurus</TD>
+            <TD >&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.833333&nbsp;</TD>
+            <TD >-125.233333&nbsp;</TD>
+            <TD >48&deg; 50' N&nbsp;</TD>
+            <TD >125&deg; 14' W&nbsp;</TD>
+            <TD >Hammond Passage&nbsp;</TD>
+            <TD >1999-05-24&nbsp;</TD>
+            <TD>3</TD>
+            <TD>Shallow subtidal (0m to -20m)</TD>
+            <TD>Undetermined</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>615//4073/3753/8163</td>
+          </TR>
+             <TR>
+            <TD>Rocinela belliceps</TD>
+            <TD >&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.833333&nbsp;</TD>
+            <TD >-125.233333&nbsp;</TD>
+            <TD >48&deg; 50' N&nbsp;</TD>
+            <TD >125&deg; 14' W&nbsp;</TD>
+            <TD >Hammond Passage&nbsp;</TD>
+            <TD >1998-05-22&nbsp;</TD>
+            <TD>1</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Few</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>614//3937/3606/8533</td>
+          </TR>
+             <TR>
+            <TD>Styela montereyensis</TD>
+            <TD >&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.818611&nbsp;</TD>
+            <TD >-125.229722&nbsp;</TD>
+            <TD >48&deg; 49.117' N&nbsp;</TD>
+            <TD >125&deg; 13.783' W&nbsp;</TD>
+            <TD >Bordelais Islets&nbsp;</TD>
+            <TD >1994-06-28&nbsp;</TD>
+            <TD>6</TD>
+            <TD>Shallow subtidal (0m to -20m)</TD>
+            <TD>Abundant</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>608//3533/3160/9054</td>
+          </TR>
+             <TR>
+            <TD>Manania gwilliami</TD>
+            <TD >Red Stalked Jelly&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.8233333333333&nbsp;</TD>
+            <TD >-125.223333333333&nbsp;</TD>
+            <TD >48&deg; 49.4' N&nbsp;</TD>
+            <TD >125&deg; 13.4' W&nbsp;</TD>
+            <TD >Edward King Island&nbsp;</TD>
+            <TD >2000-05-09&nbsp;</TD>
+            <TD>2</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Abundant</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>616//4197/3891/9095</td>
+          </TR>
+             <TR>
+            <TD>Mediaster aequalis</TD>
+            <TD >Vermilion Star&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.818611&nbsp;</TD>
+            <TD >-125.229722&nbsp;</TD>
+            <TD >48&deg; 49.117' N&nbsp;</TD>
+            <TD >125&deg; 13.783' W&nbsp;</TD>
+            <TD >Bordelais Islets&nbsp;</TD>
+            <TD >1994-06-28&nbsp;</TD>
+            <TD>3</TD>
+            <TD>Shallow subtidal (0m to -20m)</TD>
+            <TD>Few</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>608//3533/3160/9772</td>
+          </TR>
+             <TR>
+            <TD>Strongylocentrotus franciscanus</TD>
+            <TD >Red Sea Urchin&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.818611&nbsp;</TD>
+            <TD >-125.229722&nbsp;</TD>
+            <TD >48&deg; 49.117' N&nbsp;</TD>
+            <TD >125&deg; 13.783' W&nbsp;</TD>
+            <TD >Bordelais Islets&nbsp;</TD>
+            <TD >2005-04-05&nbsp;</TD>
+            <TD>8</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Abundant</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>621//4738/4511/9914</td>
+          </TR>
+             <TR>
+            <TD>Strongylocentrotus purpuratus</TD>
+            <TD >Purple Sea Urchin&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.818611&nbsp;</TD>
+            <TD >-125.229722&nbsp;</TD>
+            <TD >48&deg; 49.117' N&nbsp;</TD>
+            <TD >125&deg; 13.783' W&nbsp;</TD>
+            <TD >Bordelais Islets&nbsp;</TD>
+            <TD >2005-04-05&nbsp;</TD>
+            <TD>1</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Abundant</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>621//4739/4512/9956</td>
+          </TR>
+             <TR>
+            <TD>Chlamys hastata</TD>
+            <TD >Spiny Pink Scallop&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.833333&nbsp;</TD>
+            <TD >-125.233333&nbsp;</TD>
+            <TD >48&deg; 50' N&nbsp;</TD>
+            <TD >125&deg; 14' W&nbsp;</TD>
+            <TD >Hammond Passage&nbsp;</TD>
+            <TD >1998-05-22&nbsp;</TD>
+            <TD>24</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>614//3937/3606/10517</td>
+          </TR>
+             <TR>
+            <TD>Calliostoma annulatum</TD>
+            <TD >Purple-ring topsnail&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.833333&nbsp;</TD>
+            <TD >-125.233333&nbsp;</TD>
+            <TD >48&deg; 50' N&nbsp;</TD>
+            <TD >125&deg; 14' W&nbsp;</TD>
+            <TD >Hammond Passage&nbsp;</TD>
+            <TD >1998-05-22&nbsp;</TD>
+            <TD>1</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>614//3937/3606/11063</td>
+          </TR>
+             <TR>
+            <TD>Neptunea tabulata</TD>
+            <TD >Tabled whelk&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.833333&nbsp;</TD>
+            <TD >-125.233333&nbsp;</TD>
+            <TD >48&deg; 50' N&nbsp;</TD>
+            <TD >125&deg; 14' W&nbsp;</TD>
+            <TD >Hammond Passage&nbsp;</TD>
+            <TD >1998-05-22&nbsp;</TD>
+            <TD>3</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>614//3937/3606/11299</td>
+          </TR>
+             <TR>
+            <TD>Trichotropis cancellata</TD>
+            <TD >Cancellate hairysnail&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.833333&nbsp;</TD>
+            <TD >-125.233333&nbsp;</TD>
+            <TD >48&deg; 50' N&nbsp;</TD>
+            <TD >125&deg; 14' W&nbsp;</TD>
+            <TD >Hammond Passage&nbsp;</TD>
+            <TD >1998-05-22&nbsp;</TD>
+            <TD>3</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>614//3937/3606/11520</td>
+          </TR>
+             <TR>
+            <TD>Littorina sitkana</TD>
+            <TD >Sitka periwinkle&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.85&nbsp;</TD>
+            <TD >-125.266666666667&nbsp;</TD>
+            <TD >48&deg; 51' N&nbsp;</TD>
+            <TD >125&deg; 16' W&nbsp;</TD>
+            <TD >Dixon Island&nbsp;</TD>
+            <TD >1994-07-12&nbsp;</TD>
+            <TD>110</TD>
+            <TD>High intertidal (3m to 4m)</TD>
+            <TD>Abundant</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>608//3540/3169/11553</td>
+          </TR>
+             <TR>
+            <TD>Euspira lewisii</TD>
+            <TD >Lewis&#039;s Moonsnail&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.833333&nbsp;</TD>
+            <TD >-125.233333&nbsp;</TD>
+            <TD >48&deg; 50' N&nbsp;</TD>
+            <TD >125&deg; 14' W&nbsp;</TD>
+            <TD >Hammond Passage&nbsp;</TD>
+            <TD >1998-05-22&nbsp;</TD>
+            <TD>2</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>614//3937/3606/11587</td>
+          </TR>
+             <TR>
+            <TD>Sipuncula</TD>
+            <TD >Sipúnculo&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.833333&nbsp;</TD>
+            <TD >-125.233333&nbsp;</TD>
+            <TD >48&deg; 50' N&nbsp;</TD>
+            <TD >125&deg; 14' W&nbsp;</TD>
+            <TD >Hammond Passage&nbsp;</TD>
+            <TD >1998-05-22&nbsp;</TD>
+            <TD>3</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>614//3937/3606/12029</td>
+          </TR>
+             <TR>
+            <TD>Embiotoca lateralis</TD>
+            <TD >Striped Seaperch&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.833333&nbsp;</TD>
+            <TD >-125.25&nbsp;</TD>
+            <TD >48&deg; 50' N&nbsp;</TD>
+            <TD >125&deg; 15' W&nbsp;</TD>
+            <TD >Folger Island&nbsp;</TD>
+            <TD >1996-09-17&nbsp;</TD>
+            <TD>1</TD>
+            <TD>Shallow subtidal (0m to -20m)</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>611//3740/3380/12277</td>
+          </TR>
+             <TR>
+            <TD>Hexagrammos decagrammus</TD>
+            <TD >Kelp Greenling&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.82&nbsp;</TD>
+            <TD >-125.226666666667&nbsp;</TD>
+            <TD >48&deg; 49.2' N&nbsp;</TD>
+            <TD >125&deg; 13.6' W&nbsp;</TD>
+            <TD >Taylor Islet&nbsp;</TD>
+            <TD >1993-06-11&nbsp;</TD>
+            <TD>3</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Abundant</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>606//3462/3079/12344</td>
+          </TR>
+             <TR>
+            <TD>Hexagrammos decagrammus</TD>
+            <TD >Kelp Greenling&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.82&nbsp;</TD>
+            <TD >-125.226666666667&nbsp;</TD>
+            <TD >48&deg; 49.2' N&nbsp;</TD>
+            <TD >125&deg; 13.6' W&nbsp;</TD>
+            <TD >Taylor Islet&nbsp;</TD>
+            <TD >1993-10-11&nbsp;</TD>
+            <TD>11</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>606//3489/3111/12347</td>
+          </TR>
+             <TR>
+            <TD>Hexagrammos decagrammus</TD>
+            <TD >Kelp Greenling&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.82&nbsp;</TD>
+            <TD >-125.226666666667&nbsp;</TD>
+            <TD >48&deg; 49.2' N&nbsp;</TD>
+            <TD >125&deg; 13.6' W&nbsp;</TD>
+            <TD >Taylor Islet&nbsp;</TD>
+            <TD >1993-10-11&nbsp;</TD>
+            <TD>3</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Abundant</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>606//3489/3112/12348</td>
+          </TR>
+             <TR>
+            <TD>Hexagrammos decagrammus</TD>
+            <TD >Kelp Greenling&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.82&nbsp;</TD>
+            <TD >-125.226666666667&nbsp;</TD>
+            <TD >48&deg; 49.2' N&nbsp;</TD>
+            <TD >125&deg; 13.6' W&nbsp;</TD>
+            <TD >Taylor Islet&nbsp;</TD>
+            <TD >1993-10-11&nbsp;</TD>
+            <TD>11</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>606//3489/3112/12349</td>
+          </TR>
+             <TR>
+            <TD>Ophiodon elongatus</TD>
+            <TD >Lingcod&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.818611&nbsp;</TD>
+            <TD >-125.229722&nbsp;</TD>
+            <TD >48&deg; 49.117' N&nbsp;</TD>
+            <TD >125&deg; 13.783' W&nbsp;</TD>
+            <TD >Bordelais Islets&nbsp;</TD>
+            <TD >1994-06-28&nbsp;</TD>
+            <TD>0</TD>
+            <TD>Shallow subtidal (0m to -20m)</TD>
+            <TD>Abundant</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>608//3532/3159/12654</td>
+          </TR>
+             <TR>
+            <TD>Oxylebius pictus</TD>
+            <TD >Painted Greenling&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.818611&nbsp;</TD>
+            <TD >-125.229722&nbsp;</TD>
+            <TD >48&deg; 49.117' N&nbsp;</TD>
+            <TD >125&deg; 13.783' W&nbsp;</TD>
+            <TD >Bordelais Islets&nbsp;</TD>
+            <TD >1994-06-28&nbsp;</TD>
+            <TD>0</TD>
+            <TD>Shallow subtidal (0m to -20m)</TD>
+            <TD>Abundant</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>608//3532/3159/12663</td>
+          </TR>
+             <TR>
+            <TD>Scomber japonicus</TD>
+            <TD >Pacific Chub Mackerel&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.818611&nbsp;</TD>
+            <TD >-125.229722&nbsp;</TD>
+            <TD >48&deg; 49.117' N&nbsp;</TD>
+            <TD >125&deg; 13.783' W&nbsp;</TD>
+            <TD >Bordelais Islets&nbsp;</TD>
+            <TD >1997-06-04&nbsp;</TD>
+            <TD>1</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>612//3803/3450/12863</td>
+          </TR>
+             <TR>
+            <TD>Sebastes melanops</TD>
+            <TD >Black Rockfish&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.818611&nbsp;</TD>
+            <TD >-125.229722&nbsp;</TD>
+            <TD >48&deg; 49.117' N&nbsp;</TD>
+            <TD >125&deg; 13.783' W&nbsp;</TD>
+            <TD >Bordelais Islets&nbsp;</TD>
+            <TD >1997-06-04&nbsp;</TD>
+            <TD>1</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>612//3803/3450/12896</td>
+          </TR>
+             <TR>
+            <TD>Oncorhynchus kisutch</TD>
+            <TD >Coho Salmon&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.818611&nbsp;</TD>
+            <TD >-125.229722&nbsp;</TD>
+            <TD >48&deg; 49.117' N&nbsp;</TD>
+            <TD >125&deg; 13.783' W&nbsp;</TD>
+            <TD >Bordelais Islets&nbsp;</TD>
+            <TD >1997-06-04&nbsp;</TD>
+            <TD>1</TD>
+            <TD>Incomplete - Historical value requiring translation</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>612//3803/3450/13076</td>
+          </TR>
+             <TR>
+            <TD>Ceratostoma foliatum</TD>
+            <TD >Foliate thornmouth&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.808283&nbsp;</TD>
+            <TD >-125.2815&nbsp;</TD>
+            <TD >48&deg; 48.497' N&nbsp;</TD>
+            <TD >125&deg; 16.89' W&nbsp;</TD>
+            <TD >Folger Passage&nbsp;</TD>
+            <TD >2012-07-04&nbsp;</TD>
+            <TD>25</TD>
+            <TD>Mid subtidal (-20m to -200m)</TD>
+            <TD>Undetermined</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>662//4916/4725/13918</td>
+          </TR>
+             <TR>
+            <TD>Ceratostoma foliatum</TD>
+            <TD >Foliate thornmouth&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.817215&nbsp;</TD>
+            <TD >-125.231732&nbsp;</TD>
+            <TD >48&deg; 49.033' N&nbsp;</TD>
+            <TD >125&deg; 13.904' W&nbsp;</TD>
+            <TD >Bordelais Islets&nbsp;</TD>
+            <TD >2012-07-24&nbsp;</TD>
+            <TD>50</TD>
+            <TD>Mid intertidal (1m to 3m)</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>662//4953/4765/13964</td>
+          </TR>
+             <TR>
+            <TD>Ceratostoma foliatum</TD>
+            <TD >Foliate thornmouth&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.817255&nbsp;</TD>
+            <TD >-125.231868&nbsp;</TD>
+            <TD >48&deg; 49.035' N&nbsp;</TD>
+            <TD >125&deg; 13.912' W&nbsp;</TD>
+            <TD >Bordelais Islets&nbsp;</TD>
+            <TD >2012-08-02&nbsp;</TD>
+            <TD>16</TD>
+            <TD>Mid intertidal (1m to 3m)</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>662//4956/4768/13971</td>
+          </TR>
+             <TR>
+            <TD>Ceratostoma foliatum</TD>
+            <TD >Foliate thornmouth&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.817255&nbsp;</TD>
+            <TD >-125.2319&nbsp;</TD>
+            <TD >48&deg; 49.035' N&nbsp;</TD>
+            <TD >125&deg; 13.914' W&nbsp;</TD>
+            <TD >Bordelais Islets&nbsp;</TD>
+            <TD >2013-05-01&nbsp;</TD>
+            <TD>43</TD>
+            <TD>Low intertidal (0m to 1m)</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>765//5054/4885/14195</td>
+          </TR>
+             <TR>
+            <TD>Ceratostoma foliatum</TD>
+            <TD >Foliate thornmouth&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.825779&nbsp;</TD>
+            <TD >-125.222613&nbsp;</TD>
+            <TD >48&deg; 49.547' N&nbsp;</TD>
+            <TD >125&deg; 13.357' W&nbsp;</TD>
+            <TD >Edward King Island&nbsp;</TD>
+            <TD >2014-04-30&nbsp;</TD>
+            <TD>1</TD>
+            <TD>Low intertidal (0m to 1m)</TD>
+            <TD>Few</TD>
+            <td>Exposed</td>
+            <td>Shore</td>
+            <td>45° - 10° slope</td>
+            <td>Continuous Rock</td>
+            <td></td>
+            <td>Low intertidal (0m to 1m)</td>
+            <td>By hand</td>
+             <td>862//5283/5176/15551</td>
+          </TR>
+             <TR>
+            <TD>Nucella canaliculata</TD>
+            <TD >Channeled dogwinkle&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.825779&nbsp;</TD>
+            <TD >-125.222613&nbsp;</TD>
+            <TD >48&deg; 49.547' N&nbsp;</TD>
+            <TD >125&deg; 13.357' W&nbsp;</TD>
+            <TD >Edward King Island&nbsp;</TD>
+            <TD >2014-04-30&nbsp;</TD>
+            <TD>6</TD>
+            <TD>Mid intertidal (1m to 3m)</TD>
+            <TD>Common</TD>
+            <td>Exposed</td>
+            <td>Shore</td>
+            <td>45° - 10° slope</td>
+            <td>Continuous Rock</td>
+            <td></td>
+            <td>Low intertidal (0m to 1m)</td>
+            <td>By hand</td>
+             <td>862//5283/5176/15552</td>
+          </TR>
+             <TR>
+            <TD>Nucella ostrina</TD>
+            <TD >Northern striped dogwinkle&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.825779&nbsp;</TD>
+            <TD >-125.222613&nbsp;</TD>
+            <TD >48&deg; 49.547' N&nbsp;</TD>
+            <TD >125&deg; 13.357' W&nbsp;</TD>
+            <TD >Edward King Island&nbsp;</TD>
+            <TD >2014-04-30&nbsp;</TD>
+            <TD>3</TD>
+            <TD>Mid intertidal (1m to 3m)</TD>
+            <TD>Common</TD>
+            <td>Exposed</td>
+            <td>Shore</td>
+            <td>45° - 10° slope</td>
+            <td>Continuous Rock</td>
+            <td></td>
+            <td>Low intertidal (0m to 1m)</td>
+            <td>By hand</td>
+             <td>862//5283/5176/15553</td>
+          </TR>
+             <TR>
+            <TD>Ocenebra lurida</TD>
+            <TD >Lurid rocksnail&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.825306&nbsp;</TD>
+            <TD >-125.222624&nbsp;</TD>
+            <TD >48&deg; 49.518' N&nbsp;</TD>
+            <TD >125&deg; 13.357' W&nbsp;</TD>
+            <TD >Edward King Island&nbsp;</TD>
+            <TD >2014-04-30&nbsp;</TD>
+            <TD>3</TD>
+            <TD>Low intertidal (0m to 1m)</TD>
+            <TD>Common</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>862//5283/5177/15587</td>
+          </TR>
+             <TR>
+            <TD>Ocenebra interfossa</TD>
+            <TD >&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.825306&nbsp;</TD>
+            <TD >-125.222624&nbsp;</TD>
+            <TD >48&deg; 49.518' N&nbsp;</TD>
+            <TD >125&deg; 13.357' W&nbsp;</TD>
+            <TD >Edward King Island&nbsp;</TD>
+            <TD >2014-04-30&nbsp;</TD>
+            <TD>1</TD>
+            <TD>Low intertidal (0m to 1m)</TD>
+            <TD>Few</TD>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+             <td>862//5283/5177/15588</td>
+          </TR>
+             <TR>
+            <TD>Ceratostoma foliatum</TD>
+            <TD >Foliate thornmouth&nbsp;</TD>
+            <TD >Collection&nbsp;</TD>
+            <TD >48.817207&nbsp;</TD>
+            <TD >-125.231699&nbsp;</TD>
+            <TD >48&deg; 49.032' N&nbsp;</TD>
+            <TD >125&deg; 13.902' W&nbsp;</TD>
+            <TD >Bordelais Islets&nbsp;</TD>
+            <TD >2014-05-01&nbsp;</TD>
+            <TD>127</TD>
+            <TD>Water surface (0m)
+</TD>
+            <TD>Abundant</TD>
+            <td>Exposed</td>
+            <td>Shore</td>
+            <td>45° - 10° slope</td>
+            <td>Continuous Rock</td>
+            <td></td>
+            <td>Low intertidal (0m to 1m)</td>
+            <td>By hand</td>
+             <td>862//5295/5190/15589</td>
+          </TR>
+    
+</TABLE>
+
+
+
