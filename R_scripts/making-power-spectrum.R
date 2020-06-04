@@ -3,6 +3,7 @@ library(tidyverse)
 library(imputeTS)
 library(spectral)
 library(lubridate)
+library(gridExtra)
 ## time series data: from Ocean Networks Canada
 
 
@@ -326,4 +327,84 @@ g_PR = ggplot(plotdata_PR, aes(x = frequency_PR, y = log(amp_PR))) +
   
 
 ggsave(g_PR, filename = "power-spectrum_FolgerPinnacle.png", path = "./figures", dpi = 300, device = "png", width = 10.71, height = 6.47)
+
+
+
+
+
+
+### creating graph with lifespans:
+BC_species <- read.csv("./data-raw/BarkleyCanyon_species-list.csv")
+
+species <- BC_species %>%
+  filter(lifespan_days != "unk") %>%
+  mutate(lifespan_minutes = as.numeric(as.character(lifespan_days))*24*60) %>% 
+  mutate(lifespan_as_frequency = 1/lifespan_minutes) %>%
+  mutate(species = as.character(species), 
+         genus = as.character(genus), 
+         higher_tax_extracted = as.character(higher_tax_extracted)) %>%
+  mutate(species = ifelse(is.na(species), species_extracted, species)) %>%
+  mutate(genus = ifelse(is.na(genus), genus_extracted, genus)) %>%
+  mutate(species = ifelse(is.na(species), "", species)) %>%
+  mutate(genus = ifelse(is.na(genus), higher_tax_extracted, genus)) 
+
+## visualize
+ggplot(species, aes(x = reorder(lifespan_days_source, lifespan_as_frequency), 
+                    y = lifespan_as_frequency)) + 
+  geom_col() + 
+  theme_bw() +
+  labs(x = "Taxonomic classification", y = "Lifespan (1/minutes)") +
+  theme(axis.text.x = element_text(angle = 90, size = 7)) + 
+  scale_x_discrete(labels = c(paste(species$genus, species$species)))
+## uh oh, many have smaller frequecies (larger lifepsans) than the time series data we have 
+
+## plot with all lifespans displayed 
+g_BC_lifespan <- g_BC + 
+  annotate("segment", x = species$lifespan_as_frequency, 
+           xend = species$lifespan_as_frequency,
+           y = -9, 
+           yend = -8.25,
+           colour = "red") 
+
+fitonplot <- species$lifespan_as_frequency[which(species$lifespan_as_frequency > min(plotdata_BC$frequency_BC))]
+  
+## plot with only lifespans that fit
+g_BC_lifespan_actual <- g_BC + 
+  annotate("segment", x = fitonplot, 
+           xend = fitonplot,
+           y = -9, 
+           yend = -8.25,
+           colour = "red") 
+  
+## manually create legend 
+gg <- ggplot() + 
+  geom_blank() +
+  theme_void() +
+  theme(panel.spacing.x=unit(1, "lines")) +
+  scale_y_continuous(limits = c(75, 75)) +
+  scale_x_continuous(limits = c(50,90)) +
+  annotate("segment", x = 62, xend = 64, y = 75, yend = 75, colour = "red") +
+  annotate("text", label = "Lifespan of species in community", x = 72, y = 75)
+  
+lay <- rbind(c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(2,2,2,2,2))
+
+g1 <- grid.arrange(g_BC_lifespan_actual, gg, layout_matrix = lay)
+g2 <- grid.arrange(g_BC_lifespan, gg, layout_matrix = lay)
+
+## save 
+ggsave(g1, filename = "power-spectrum-with-lifespan_BarkleyCanyon.png", path = "./figures", dpi = 300, device = "png", height = 6.47, width = 8.369152)
+ggsave(g2, filename = "power-spectrum-with-lifespan_all_BarkleyCanyon.png", path = "./figures", dpi = 300, device = "png", height = 6.47, width = 8.369152)
+
 
