@@ -11,21 +11,27 @@ colnames(plotdata1) <- c("time", "temp_val")
 plotdata2 <- data.frame(time = temps$date, temp_val = temps[,3])
 colnames(plotdata2) <- c("time", "temp_val")
 
-ts_combined <- ggplot(plotdata2, aes(x = time, y = temp_val)) +
-  geom_line(colour = "red") +
-  geom_line(data = plotdata1, aes(x = time, y = temp_val)) +
+bothplots <- rbind(plotdata1, plotdata2) %>%
+  mutate(location = "Location 3") 
+
+bothplots$location[1:(nrow(plotdata1))] = "Location 600"
+
+ts_combined <- ggplot(bothplots, aes(x = time, y = temp_val, colour = location)) +
+  geom_line() +
+  scale_colour_manual(values = c("red3", "black")) +
   scale_x_continuous(limits = c(1960, 1970)) +
-  labs(x = "Year", y = "Temperature (°C)") + 
+  labs(x = "Year", y = "Temperature (°C)", colour = "Collection location:") + 
   theme_bw() +
   theme(panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank(), 
         panel.border = element_blank(), 
-        axis.line = element_line(colour = "black"))
+        axis.line = element_line(colour = "black"),  
+        legend.position = "right")
 
 ggsave(ts_combined, filename = "time-series_BerkEarth_600and3.png", path = "./figures", dpi = 300, device = "png", width = 8.802532, height = 6.47)
 
 ts_single <- ggplot(plotdata2, aes(x = time, y = temp_val)) +
-  geom_line(colour = "red") +
+  geom_line() +
   scale_x_continuous(limits = c(1960, 1970)) +
   labs(x = "Year", y = "Temperature (°C)") + 
   theme_bw() +
@@ -62,12 +68,20 @@ frequency <- 1:(L/2)/L ## sampling frequency of 1 day
 
 plotdata_freq1 <- data.frame(frequency, amp1)
 plotdata_freq2 <- data.frame(frequency, amp2)
+colnames(plotdata_freq1) <- c("frequency", "amp")
+colnames(plotdata_freq2) <- colnames(plotdata_freq1) 
+
+bothplots_freq <- rbind(plotdata_freq1, plotdata_freq2) %>%
+  mutate(location = "Location 3") 
+
+bothplots_freq$location[1:(nrow(plotdata_freq1))] = "Location 600"
+
 
 # plot magnitudes against frequencies
-g <- ggplot(plotdata_freq1, aes(x=frequency, y=log(amp1))) + 
+g <- ggplot(bothplots_freq, aes(x=frequency, y=log(amp), colour = location)) + 
   geom_line() +
-  geom_line(data = plotdata_freq2, aes(x=frequency, y=log(amp2)), colour = "red") +
-  labs(x = "Frequency (1/days)", y = "log amplitude") + 
+  scale_colour_manual(values = c("red3", "black")) +
+  labs(x = "Frequency (1/days)", y = "log amplitude", colour = "Collection location:") + 
   scale_x_continuous(trans = 'log10', breaks =  c(0.0001, 0.001, 0.01, 0.1), 
                      labels = c("0.0001", "0.001", "0.01", "0.1")) +
   scale_y_continuous(expand = c(0,0), limits = c(-12, 2), breaks = c(-8, -4, 0)) +
@@ -87,7 +101,7 @@ g <- ggplot(plotdata_freq1, aes(x=frequency, y=log(amp1))) +
         panel.border = element_blank(), 
         axis.line = element_line(colour = "black"))
 
-ggsave(g, filename = "power-spectrum_BerkEarth_600and3.png", path = "./figures", dpi = 300, device = "png", width = 8.802532, height = 6.47)
+ggsave(g, filename = "power-spectrum_BerkEarth_600and3.png", path = "./figures", dpi = 300, device = "png", width = 10.802532, height = 6.47)
 
 
 
@@ -147,8 +161,8 @@ get.interannual.SS = function(series){
   return(X)
 }
 
-sumvar1 = get.total.SS(plotdata1$temp_val) ## 600
-sumvar2 = get.total.SS(plotdata2$temp_val) ## 3
+var1 = get.total.SS(plotdata1$temp_val) ## 600
+var2 = get.total.SS(plotdata2$temp_val) ## 3
 
 seasonalvar1 = get.seasonal.SS(plotdata1$temp_val)
 seasonalvar2 = get.seasonal.SS(plotdata2$temp_val)
@@ -159,22 +173,81 @@ annualvar2 = get.annual.SS(plotdata2$temp_val)
 interannualvar1 = get.interannual.SS(plotdata1$temp_val)
 interannualvar2 = get.interannual.SS(plotdata2$temp_val)
 
-ratio1s = seasonalvar1/sumvar1
-ratio2s = seasonalvar2/sumvar2
+ratio1s = seasonalvar1/var1
+ratio2s = seasonalvar2/var2
 
-ratio1a = annualvar1/sumvar1
-ratio2a = annualvar2/sumvar2
+ratio1a = annualvar1/var1
+ratio2a = annualvar2/var2
 
-ratio1ia = interannualvar1/sumvar1
-ratio2ia = interannualvar2/sumvar2
+ratio1ia = interannualvar1/var1
+ratio2ia = interannualvar2/var2
 
 sd1 <- sd(plotdata1$temp_val)
 sd2 <- sd(plotdata2$temp_val)
 
-plotdata_freq1$amp1[140]
-plotdata_freq2$amp2[140]
 
 
 ## visualize:
+compare <- data.frame(location = c("Location 600","Location 600","Location 600", 
+                                   "Location 3","Location 3","Location 3"),
+                      var_type = c("Seasonal", "Annual", "Interannual"),
+                      proportion = c(ratio1s, ratio1a, ratio1ia, ratio2s, ratio2a, ratio2ia),
+                      sd = c(sd1, sd1, sd1, sd2, sd2, sd2),
+                      var = c(var1,var1,var1,var2,var2,var2))
 
+c <- ggplot(compare, aes(x = location, y = proportion, fill = var_type)) +
+  geom_col(width = .60) + 
+  scale_fill_manual(values = hcl.colors(n=3)) +
+  labs(x = "Collection location", y = "Proportion of total variance of temperature", 
+       fill = "Type of variation:") + 
+  theme_bw() + 
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(), 
+        axis.line = element_line(colour = "black"))
 
+c2 <- ggplot(compare, aes(x = reorder(var_type, -proportion), y = proportion, fill = location)) +
+  geom_col(width = .60, position = "dodge") + 
+  scale_fill_manual(values = c("red3", "black")) +
+  labs(x = "Collection location", y = "Proportion of total variance of temperature", 
+       fill = "Type of variation:") + 
+  theme_bw() + 
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(), 
+        axis.line = element_line(colour = "black"))
+              
+sd <- ggplot(compare, aes(x = location, y = sd, fill = location)) +
+  geom_col(width = .60) + 
+  scale_fill_manual(values = c("red3", "black")) +
+  labs(x = "Collection location", y = "Standard deviation in temperature") + 
+  theme_bw() + 
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(), 
+        axis.line = element_line(colour = "black"),
+        legend.position = "none")
+
+var <- ggplot(compare, aes(x = location, y = var, fill = location)) +
+  geom_col(width = .60) + 
+  scale_fill_manual(values = c("red3", "black")) +
+  labs(x = "Collection location", y = "Total variance in temperature") + 
+  theme_bw() + 
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(), 
+        axis.line = element_line(colour = "black"),
+        legend.position = "none") 
+  
+both <- grid.arrange(sd, var, ncol = 2)
+
+ggsave(both, filename = "BerkEarth_600and3_sd-var.png", path = "./figures", dpi = 300, device = "png", width = 6.47*1.863265, height = 6.47)
+
+ggsave(c, filename = "BerkEarth_600and3_variation-breakdown.png", path = "./figures", dpi = 300, device = "png", width = 6.47*1.625541, height = 6.47)
+
+ggsave(c2, filename = "BerkEarth_600and3_variation-comparison.png", path = "./figures", dpi = 300, device = "png", width = 6.47*1.625541, height = 6.47)
+
+## interesting figures to explore:
+##  - latitude vs proportion of variation that is seasonal, annual, interannual 
+##  - standard deviation/experienced variaation in temp values vs proportion of variation that is seasonal, annual, interannual
+##  - ARR vs proportion of variation that is seasonal, annual, interannual 
