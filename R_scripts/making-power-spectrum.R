@@ -47,10 +47,10 @@ plotNA.distributionBar(series$temp_val, breaks = 30)
 ## ______
 
 
-## chop that part off:
-start <- which(as.Date(series$time) == "2010-06-01")
-stop <- length(series$temp_val)
-series <- series[start[1]:stop,]
+## chop that part off evenly:
+start <- which(as.Date(series$time) == "2011-01-01")
+stop <- which(as.Date(series$time) == "2015-01-01")
+series <- series[start[1]:stop[1],]
 
 ## ______
 ## check out the NAs now:
@@ -89,8 +89,8 @@ ts_plotdata_BC <- data.frame(time, BC)
 
 ts_BC <- ggplot(ts_plotdata_BC, aes(x = time, y = BC)) +
   geom_line() +
-  scale_x_continuous(breaks = c(2010:2015), 
-                     labels = c("2010", "2011", "2012", "2013", "2014", "2015")) +
+  scale_x_continuous(breaks = c(2011:2015), 
+                     labels = c("2011", "2012", "2013", "2014", "2015")) +
   labs(x = "Year", y = "Temperature (°C)") + 
   theme_bw() +
   theme(panel.grid.major = element_blank(), 
@@ -246,6 +246,11 @@ series_new <- series %>%
 
 series = readRDS("./data-processed/series_PR")
 
+start <- which(as.Date(series$time) == "2012-12-31")
+stop <- which(as.Date(series$time) == "2014-12-31")
+series <- series[start[1]:stop[1],]
+
+
 ## impute missing values in the time series to allow transformation  
 PR = na_seadec(series$temp_val, find_frequency = TRUE, algorithm = "interpolation")
 PR <- readRDS("./data-processed/PR.rds") ## saved RDS
@@ -271,7 +276,7 @@ ts_plotdata_PR <- data.frame(time, PR)
 
 ts_PR <- ggplot(ts_plotdata_PR, aes(x = time, y = PR)) +
   geom_line() +
-  scale_x_continuous(limits = c(2012.75, 2015),
+  scale_x_continuous(limits = c(2013, 2015),
                      breaks = c(2013:2015), 
                      labels = c("2013", "2014", "2015")) +
   labs(x = "Year", y = "Temperature (°C)") + 
@@ -323,8 +328,8 @@ g_PR = ggplot(plotdata_PR, aes(x = frequency_PR, y = log(amp_PR))) +
         panel.grid.minor = element_blank(),
         panel.border = element_blank(), 
         axis.line = element_line(colour = "black"))
-  
-  
+
+
 
 ggsave(g_PR, filename = "power-spectrum_FolgerPinnacle.png", path = "./figures", dpi = 300, device = "png", width = 10.71, height = 6.47)
 
@@ -367,7 +372,7 @@ g_BC_lifespan <- g_BC +
            colour = "red") 
 
 fitonplot <- species$lifespan_as_frequency[which(species$lifespan_as_frequency > min(plotdata_BC$frequency_BC))]
-  
+
 ## plot with only lifespans that fit
 g_BC_lifespan_actual <- g_BC + 
   annotate("segment", x = fitonplot, 
@@ -375,7 +380,7 @@ g_BC_lifespan_actual <- g_BC +
            y = -9, 
            yend = -8.25,
            colour = "red") 
-  
+
 ## manually create legend 
 gg <- ggplot() + 
   geom_blank() +
@@ -385,7 +390,7 @@ gg <- ggplot() +
   scale_x_continuous(limits = c(50,90)) +
   annotate("segment", x = 62, xend = 64, y = 75, yend = 75, colour = "red") +
   annotate("text", label = "Lifespan of species in community", x = 72, y = 75)
-  
+
 lay <- rbind(c(1,1,1,1,1),
              c(1,1,1,1,1),
              c(1,1,1,1,1),
@@ -406,5 +411,3 @@ g2 <- grid.arrange(g_BC_lifespan, gg, layout_matrix = lay)
 ## save 
 ggsave(g1, filename = "power-spectrum-with-lifespan_BarkleyCanyon.png", path = "./figures", dpi = 300, device = "png", height = 6.47, width = 8.369152)
 ggsave(g2, filename = "power-spectrum-with-lifespan_all_BarkleyCanyon.png", path = "./figures", dpi = 300, device = "png", height = 6.47, width = 8.369152)
-
-
