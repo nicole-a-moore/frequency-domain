@@ -1,0 +1,85 @@
+group,family,genus,species,subspecies,genus_species,lifespan,source,notes,larval_realm
+Damselflies,Lestidae,Lestes,congener,,Lestes congener,48,"Córdoba-Aguilar, 2008",family,aquatic
+Damselflies,Lestidae,Lestes,disjunctus,,Lestes disjunctus,74,"Bick & Bick, 1961",,aquatic
+Damselflies,Lestidae,Lestes,rectangularis,,Lestes rectangularis,42,"Gower & Kormondy, 1963",,aquatic
+Damselflies,Lestidae,Lestes,unguiculatus,,Lestes unguiculatus,48,"Córdoba-Aguilar, 2008",family,aquatic
+Damselflies,Calopterygidae,Calopteryx,maculata,,Calopteryx maculata,47,"Waage, 1972",,aquatic
+Damselflies,Coenagrionidae,Argia,apicalis,,Argia apicalis,33,"Bick & Bick, 1965",,aquatic
+Damselflies,Coenagrionidae,Argia,fumipennis,,Argia fumipennis,34,"Córdoba-Aguilar, 2008",family,aquatic
+Damselflies,Coenagrionidae,Enallagma,civile,,Enallagma civile,13,"Bick & Bick, 1963",,aquatic
+Damselflies,Coenagrionidae,Enallagma,ebrium,,Enallagma ebrium,34,"Córdoba-Aguilar, 2008",family,aquatic
+Damselflies,Coenagrionidae,Enallagma,traviatum,,Enallagma traviatum,34,"Córdoba-Aguilar, 2008",family,aquatic
+Damselflies,Coenagrionidae,Ischnura,hastata,,Ischnura hastata,5.74,"Lorenzo-Carballa et al., 2009",average,aquatic
+Damselflies,Coenagrionidae,Ischnura,posita,,Ischnura posita,9,"Robinson, 1983",,aquatic
+Damselflies,Coenagrionidae,Ischnura,verticalis,,Ischnura verticalis,21,"Richardson & Baker, 1997",,aquatic
+Dragonflies,Aeshnidae,Anax,junius,,Anax junius,30,ADW,,aquatic
+Dragonflies,Gomphidae,Arigomphus,villosipes,,Arigomphus villosipes,70,"Bried, 2005",general max for dragonflies,aquatic
+Dragonflies,Corduliidae,Epitheca,princeps,,Epitheca princeps,14,ADW,adult,aquatic
+Dragonflies,Libellulidae,Erythemis,simplicicollis,,Erythemis simplicicollis,54,"Córdoba-Aguilar, 2008",family,aquatic
+Dragonflies,Libellulidae,Libellula,luctuosa,,Libellula luctuosa,54,"Córdoba-Aguilar, 2008",family,aquatic
+Dragonflies,Libellulidae,Libellula,pulchella,,Libellula pulchella,10.64,"Boano & Rolando, 2003",mean,aquatic
+Dragonflies,Libellulidae,Libellula,vibrans,,Libellula vibrans,54,"Córdoba-Aguilar, 2008",family,aquatic
+Dragonflies,Libellulidae,Pachydiplax,longipennis,,Pachydiplax longipennis,30,"McKinnon & May, 1994",,aquatic
+Dragonflies,Libellulidae,Perithemis,tenera,,Perithemis tenera,54,"Córdoba-Aguilar, 2008",family,aquatic
+Dragonflies,Libellulidae,Plathemis,lydia,,Plathemis lydia,6,"Koenig & Albano, 1965",median,aquatic
+Dragonflies,Libellulidae,Sympetrum,corruptum,,Sympetrum corruptum,87,ADW,adult life,aquatic
+Dragonflies,Libellulidae,Sympetrum,rubicundulum,,Sympetrum rubicundulum,54,"Córdoba-Aguilar, 2008",family,aquatic
+Dragonflies,Libellulidae,Sympetrum,semicinctum,,Sympetrum semicinctum,54,"Córdoba-Aguilar, 2008",family,aquatic
+Dragonflies,Libellulidae,Sympetrum,vicinum,,Sympetrum vicinum,365,"Wissinger, 1998",estimate,aquatic
+Dragonflies,Libellulidae,Tramea,lacerata,,Tramea lacerata,54,"Córdoba-Aguilar, 2008",family,aquatic
+Dragonflies,Libellulidae,Tramea,onusta,,Tramea onusta,54,"Córdoba-Aguilar, 2008",family,aquatic
+Amphibia,Caudata,Ambystoma,tigrinum,,Ambystoma tigrinum,9125,Amphibio,,aquatic
+Amphibia,Caudata,Ambystoma,laterale/jeffersonianum,,Ambystoma laterale/jeffersonianum,NA,NA,hybrid,aquatic
+Amphibia,Anura,Anaxyrus,americanus,americanus,Anaxyrus americanus,13140,Amphibio,,aquatic
+Amphibia,Anura,Acris,crepitans,,Acris crepitans,1788.5,Amphibio,,aquatic
+Amphibia,Anura,Pseudacris,triseriata,,Pseudacris triseriata,1825,"Meyers et al., 2015",,aquatic
+Amphibia,Anura,Dryophytes,versicolor,,Dryophytes versicolor,2825,"AmphibiaWeb, 2020",,aquatic
+Amphibia,Anura,Lithobates,clamitans,melanota,Lithobates clamitans,3650,Amphibio,,aquatic
+Amphibia,Anura,Lithobates,catesbeianus,,Lithobates catesbeianus,5840,Amphibio,,aquatic
+Amphibia,Anura,Lithobates,pipiens,,Lithobates pipiens,3285,Amphibio,,aquatic
+Reptilia,Chelonia,Chelydra,serpentina,serpentina,Chelydra serpentina,17155,AnAge,,terrestrial
+Reptilia,Chelonia,Chrysemys,picta,marginata,Chrysemys picta,14600,ADW,,terrestrial
+Reptilia,Lacertilia,Eumeces,fasciatus,,Eumeces fasciatus,2190,ADW,,terrestrial
+Reptilia,Serpentes,Thamnophis,sirtalis,sirtalis,Thamnophis sirtalis,3650,ADW,,terrestrial
+Reptilia,Serpentes,Nerodia,sipedon,sipedon,Nerodia sipedon,3504,AnAge,,terrestrial
+Reptilia,Serpentes,Storeria,dekayi,wrightorum,Storeria dekayi,2555,AnAge,,terrestrial
+Stoneflies,Sciomyzidae,Dictya,expansa,,Dictya expansa,105,"McLaughlin & Dame, 1989","genus, generation time",
+Stoneflies,Sciomyzidae,Dictya,pictipes,,Dictya pictipes,105,"McLaughlin & Dame, 1990","genus, generation time",
+Stoneflies,Sciomyzidae,Dictya,sabroskyi,,Dictya sabroskyi,105,"McLaughlin & Dame, 1991","genus, generation time",
+Stoneflies,Sciomyzidae,Dictya,spp.,,Dictya spp.,NA,NA,not classified to species level,
+Stoneflies,Sciomyzidae,Ditaeniella,parallela,,Ditaeniella parallela,,,,
+Stoneflies,Sciomyzidae,Ditaeniella,trivitatta,,Ditaeniella trivitatta,,,,
+Stoneflies,Sciomyzidae,Limnia,boscii,,Limnia boscii,unk,,,
+Stoneflies,Sciomyzidae,Pherbellia,nana,nana,Pherbellia nana,40,"Coupland & Baker, 1995","genus, generation time",
+Stoneflies,Sciomyzidae,Pherbellia,seticoxa,,Pherbellia seticoxa,40,"Coupland & Baker, 1995","genus, generation time",
+Stoneflies,Sciomyzidae,Sepedon,armipes,,Sepedon armipes,182.5,"Berg et al., 1982","estimate - aquatic larvae, adults overwinter, produce next generation and die in May, must overwinter as adult for successful reproduction",aquatic
+Stoneflies,Sciomyzidae,Sepedon,fuscipennis,,Sepedon fuscipennis,199,"Barnes, 1976",,
+Stoneflies,Sciomyzidae,Tetanocera,loewi,,Tetanocera loewi,115,"Hynes et al., 2014",,
+Butterflies,Danaidae,Danaus,plexippus,,Danaus plexippus,270,"Messan et al., 2011",,terrestrial
+Butterflies,Hesperiidae,Epargyreus,clarus,,Epargyreus clarus,166,"Stokes et al., 1991;Hamon, 2016",overwinter as pupae,terrestrial
+Butterflies,Limenitidinae,Limenitis,archippus,,Limenitis archippus,155,"Stokes et al., 1991;Hamon, 2016",overwinter as larvae,terrestrial
+Butterflies,Limenitidinae,Limenitis,arthemis,astyanax,Limenitis arthemis,155,"Stokes et al., 1991;Hamon, 2016",overwinter as larvae,terrestrial
+Butterflies,Lycaenidae,Celastrina,argiolus,,Celastrina argiolus,139,"Stokes et al., 1991;Bos, 2006",overwinters as pupa,terrestrial
+Butterflies,Lycaenidae,Celastrina,neglecta,,Celastrina neglecta,unk,,,terrestrial
+Butterflies,Lycaenidae,Cupido,comyntas,comyntas,Cupido comyntas,unk,,,terrestrial
+Butterflies,Lycaenidae,Lycaena,hyllus,,Lycaena hyllus,unk,,,terrestrial
+Butterflies,Lycaenidae,Satyrium,liparops,,Satyrium liparops,unk,,,terrestrial
+Butterflies,Nymphalidae,Asterocampa,celtis,,Asterocampa celtis,165,"Stokes et al., 1991;Gochfeld & Burger, 1997","overwinters as larva, occasionally adult ",terrestrial
+Butterflies,Nymphalidae,Euphydryas,gilletti,,Euphydryas gilletti,730,"Williams, 1984",,terrestrial
+Butterflies,Nymphalidae,Nymphalis,antiopa,,Nymphalis antiopa,330,"Lee, 2015",average 11 mo,terrestrial
+Butterflies,Nymphalidae,Phyciodes,tharos,,Phyciodes tharos,143,"Stokes et al., 1991",overwinters as larva,terrestrial
+Butterflies,Nymphalidae,Polygonia,comma,,Polygonia comma,170,"Stokes et al., 1991;http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.484.8891&rep=rep1&type=pdf",overwinter as adults ,terrestrial
+Butterflies,Nymphalidae,Polygonia,interrogationis,,Polygonia interrogationis,170,"Stokes et al., 1991;Lee, 2015",overwinters ,terrestrial
+Butterflies,Nymphalidae,Speyeria,cybele,,Speyeria cybele,254.75,"James, 2008","3-5 week adult reproductive diapause after eclosion, overwinter as first instar (365/4)",terrestrial
+Butterflies,Nymphalidae,Vanessa,atalanta,,Vanessa atalanta,406,"Smyth & Nash, 2008","eggs Nov, hatched May, 29 day pupation, 197 days adult life",terrestrial
+Butterflies,Papilionidae,Papilio,cresphontes,,Papilio cresphontes,144,"Tremblay, 2020",overwintering pupae,terrestrial
+Butterflies,Papilionidae,Papilio,glaucus,,Papilio glaucus,162,"Stokes et al., 1991; Hagen & Lederhouse, 1984",overwinters as pupa,terrestrial
+Butterflies,Pieridae,Colias,eurytheme,,Colias eurytheme,149,"Stokes et al., 1991;Schweitzer, 2006",overwinters as second instar or pupa,terrestrial
+Butterflies,Pieridae,Colias,philodice,,Colias philodice,149,"Stokes et al., 1991;Stanton & Cook, 1983",overwinters as third instar larvae,terrestrial
+Butterflies,Pieridae,Pieris,rapae,,Pieris rapae,149,"Stokes et al., 1991;Richards, 1940",overwinters as pupa,terrestrial
+Butterflies,Satyridae,Megisto,cymela,,Megisto cymela,168,"Stokes et al., 1991; Courard-Hauri et al., 2006",overwinters 4th instar ,terrestrial
+Moths,Lymantriidae,Orgyia,leucostigma,,Orgyia leucostigma,unk,,,terrestrial
+Bees,NA,Apis,mellifera,,Apis mellifera,320,"Ribbands, 1955",worker,terrestrial
+Bees,NA,Xylocopa,virginiana,,Xylocopa virginiana,730,"Gerling & Hermann, 1978",,terrestrial
+Insects,NA,Boisea,trivittata,,Boisea trivittata,365,ADW,,terrestrial
+Insects,NA,Mycetophila,sp.,,Mycetophila sp.,NA,NA,not classified to species level,terrestrial
