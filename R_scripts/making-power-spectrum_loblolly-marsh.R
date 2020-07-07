@@ -1,6 +1,10 @@
 ## make power spectrum for loblolly marsh
 library(tidyverse)
 library(gridExtra)
+library(RColorBrewer)
+library(png)
+library(grid)
+library(cowplot)
 
 loc_cumulative <- read.csv("./data-processed/time-series_loblolly-marsh.csv") %>%
   .[1:119800,] ## chop to even year
@@ -94,10 +98,24 @@ lifespans <- read.csv("./data-raw/species-list_LoblollyMarsh_completed.csv") %>%
   mutate(lifespan = as.numeric(ifelse(lifespan == "unk", NA, as.character(lifespan)))) %>%
   mutate(lifespan = round(lifespan, digits = 0)) %>%
   mutate(lifespan_minutes = lifespan*24*60) %>%
-  mutate(lifespan_frequency = 1/lifespan_minutes)
-  
+  mutate(lifespan_frequency = 1/lifespan_minutes) %>%
+  group_by(group) %>%
+  mutate(group_mean = mean(lifespan, na.rm=TRUE)) %>%
+  arrange(desc(group_mean)) %>% 
+  ungroup()
+
+cols <- data.frame(group = unique(lifespans$group)) %>%
+  mutate(colour = brewer.pal(n = 9, name = "Spectral"))
+
+lifespans <- left_join(lifespans, cols)
 
 gg_withlife <- ggplot(plotdata, aes(x = frequency, y = log10(amp))) + 
+  annotate("segment", x = lifespans$lifespan_frequency, 
+           xend = lifespans$lifespan_frequency,
+           y = -6, 
+           yend = 1,
+           colour = lifespans$colour,
+           size = 0.5) +
   labs(x = "Frequency (1/minutes)", y = "log amplitude") + 
   scale_x_continuous(trans = 'log10', breaks =  c(0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1), 
                      labels = c("0.000001", "0.00001", "0.0001", "0.001", "0.01", "0.1")) +
@@ -117,23 +135,22 @@ gg_withlife <- ggplot(plotdata, aes(x = frequency, y = log10(amp))) +
         panel.grid.minor = element_blank(), 
         panel.border = element_blank(), 
         axis.line = element_line(colour = "black")) +
-  annotate("segment", x = lifespans$lifespan_frequency, 
-           xend = lifespans$lifespan_frequency,
-           y = -6, 
-           yend = 1,
-           colour = "red",
-           size = 0.15) +
   geom_line() 
 
 ## manually create legend 
+x <- c(55:62)
+
 gg_legend <- ggplot() + 
   geom_blank() +
   theme_void() +
   theme(panel.spacing.x=unit(1, "lines")) +
   scale_y_continuous(limits = c(75, 75)) +
   scale_x_continuous(limits = c(50,90)) +
-  annotate("segment", x = 60, xend = 62, y = 75, yend = 75, colour = "red") +
-  annotate("text", label = "Lifespan of species in community", x = 72, y = 75)
+  geom_line(aes(x=x, y=75, colour = x)) +
+  scale_color_gradientn(colours = lifespans$colour) +
+  annotate("text", label = "Lifespan of species in community", x = 72, y = 75) +
+  theme(legend.position = "none")
+
 
 lay <- rbind(c(1,1,1,1,1),
              c(1,1,1,1,1),
@@ -151,5 +168,8 @@ lay <- rbind(c(1,1,1,1,1),
 
 gg_complete <- grid.arrange(gg_withlife, gg_legend, layout_matrix = lay)
 
-ggsave(gg_complete, filename = "power-spectrum-with-lifespan_Loblolly-Marsh.png", path = "./figures", dpi = 300, device = "png", height = 6.47, width = 8.369152)
+ggsave(gg_complete, filename = "power-spectrum-with-lifespan_Loblolly-Marsh.png", path = "./figures", dpi = 300, device = "png", height = 7.47, width = 10.369152)
+
+
+
 
