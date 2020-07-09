@@ -4,7 +4,6 @@ library(gridExtra)
 library(RColorBrewer)
 library(png)
 library(grid)
-library(cowplot)
 
 loc_cumulative <- read.csv("./data-processed/time-series_loblolly-marsh.csv") %>%
   .[1:119800,] ## chop to even year
@@ -102,10 +101,16 @@ lifespans <- read.csv("./data-raw/species-list_LoblollyMarsh_completed.csv") %>%
   group_by(group) %>%
   mutate(group_mean = mean(lifespan, na.rm=TRUE)) %>%
   arrange(desc(group_mean)) %>% 
-  ungroup()
+  ungroup() %>%
+  filter(!is.na(lifespan)) %>%
+  mutate(group = ifelse(group == "Damselflies", "Damselflies & Dragonflies", as.character(group))) %>%
+  mutate(group = ifelse(group == "Dragonflies", "Damselflies & Dragonflies", as.character(group))) %>%
+  mutate(group = ifelse(group == "Insects", "Other insects", as.character(group))) %>%
+  mutate(group = ifelse(group == "Bees", "Other insects", as.character(group))) %>%
+  mutate(group = ifelse(group == "Stoneflies", "Other insects", as.character(group))) 
 
 cols <- data.frame(group = unique(lifespans$group)) %>%
-  mutate(colour = brewer.pal(n = 9, name = "Spectral"))
+  mutate(colour = brewer.pal(n = 5, name = "Spectral"))
 
 lifespans <- left_join(lifespans, cols)
 
@@ -168,8 +173,75 @@ lay <- rbind(c(1,1,1,1,1),
 
 gg_complete <- grid.arrange(gg_withlife, gg_legend, layout_matrix = lay)
 
-ggsave(gg_complete, filename = "power-spectrum-with-lifespan_Loblolly-Marsh.png", path = "./figures", dpi = 300, device = "png", height = 7.47, width = 10.369152)
+ggsave(gg_complete, filename = "power-spectrum-with-lifespan_Loblolly-Marsh_changed-groups.png", path = "./figures", dpi = 300, device = "png", height = 7.47, width = 10.369152)
+
+## read in and properly colour images
+frog <- as.raster(png::readPNG("./data-raw/frog.png")) 
+frog[frog != "#FFFFFF"] <- lifespans$colour[first(which(lifespans$group=="Amphibia"))]
+frog[frog == "#FFFFFF"] <- "#FFFFFF00"
+gg_frog <- rasterGrob(frog, interpolate=TRUE, x = .1, y = .9, height = 0.15, width = .1)
+
+dragonfly <- as.raster(png::readPNG("./data-raw/dragonfly.png"))
+dragonfly[dragonfly != "#00000000"] <- lifespans$colour[first(which(lifespans$group=="Damselflies & Dragonflies"))]
+gg_dragonfly <- rasterGrob(dragonfly, x = .6, y = .9, height = 0.15, width = .15)
+
+butterfly <- as.raster(png::readPNG("./data-raw/butterfly.png"))
+butterfly[butterfly == "#020202FF"] <- lifespans$colour[first(which(lifespans$group=="Butterflies"))]
+butterfly[butterfly == "#020202F0"] <- lifespans$colour[first(which(lifespans$group=="Butterflies"))]
+butterfly[butterfly == "#47704C00"] <- "#FFFFFF00"
+butterfly[butterfly == "#010101A7"] <- lifespans$colour[first(which(lifespans$group=="Butterflies"))]
+butterfly[butterfly == "#010101D9"] <- lifespans$colour[first(which(lifespans$group=="Butterflies"))]
+butterfly[butterfly == "#010101C2"] <- lifespans$colour[first(which(lifespans$group=="Butterflies"))]
+butterfly[butterfly == "#0000002B"] <- "#FFFFFF00"
+butterfly[butterfly == "#00000086"] <- "#FFFFFF00"
+butterfly[butterfly == "#00000069"] <- "#FFFFFF00"
+butterfly[butterfly == "#0000004E"] <- "#FFFFFF00"
+gg_butterfly <- rasterGrob(butterfly, interpolate=TRUE, x = .3, y = .9, height = 0.15, width = .1)
+
+reptile <- as.raster(png::readPNG("./data-raw/reptile.png")) 
+reptile[reptile != "#00000000"] <- lifespans$colour[first(which(lifespans$group=="Reptilia"))]
+reptile[reptile == "#00000000"] <- "#FFFFFF00"
+gg_reptile <- rasterGrob(reptile, interpolate=TRUE, x = .2, y = .85, height = 0.2, width = .09)
+
+insects <- as.raster(png::readPNG("./data-raw/insect.png")) 
+insects[insects != "#FFFFFF"] <- lifespans$colour[first(which(lifespans$group=="Other insects"))]
+insects[insects == "#FFFFFF"] <- "#FFFFFF00"
+gg_insects <- rasterGrob(insects, interpolate=TRUE, x = .45, y = .9, height = 0.125, width = .125)
 
 
 
 
+gg_withpics <- ggplot(plotdata, aes(x = frequency, y = log10(amp))) + 
+  annotate("segment", x = lifespans$lifespan_frequency, 
+           xend = lifespans$lifespan_frequency,
+           y = -6, 
+           yend = 2,
+           colour = lifespans$colour,
+           size = 0.5) +
+  labs(x = "Frequency (1/minutes)", y = "log amplitude") + 
+  scale_x_continuous(trans = 'log10', breaks =  c(0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1), 
+                     labels = c("0.000001", "0.00001", "0.0001", "0.001", "0.01", "0.1")) +
+  scale_y_continuous(expand = c(0,0), limits = c(-6, 2), breaks = c(-6:2)) +
+  annotate("text", label = "1 year", x = 1/(365.25*24*60), y = -5.3, size = 3) +
+  annotate("segment", x = 1/(365.25*24*60), xend = 1/(365.25*24*60), y = -6, yend = -5.5) +
+  annotate("text", label = "1 day", x = 1/(24*60) - 0.00005, y = -5.3, size = 3) +
+  annotate("segment", x = 1/(24*60), xend = 1/(24*60), y = -6, yend = -5.5) +
+  annotate("text", label = "1 week", x = 1/(24*60*7), y = -5.3, size = 3) +
+  annotate("segment", x = 1/(24*60*7), xend = 1/(24*60*7), y = -6, yend = -5.5) +
+  annotate("text", label = "1 month", x = 1/(30*24*60), y = -5.3, size = 3) +
+  annotate("segment", x = 1/(30*24*60), xend = 1/(30*24*60), y = -6, yend = -5.5) +
+  annotate("text", label = "1/2 day", x = 1/(12*60), y = -5.3, size = 3) +
+  annotate("segment", x = 1/(12*60), xend = 1/(12*60), y = -6, yend = -5.5) +
+  theme_bw() + 
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), 
+        axis.line = element_line(colour = "black")) +
+  geom_line() +
+  annotation_custom(gg_frog) +
+  annotation_custom(gg_dragonfly) +
+  annotation_custom(gg_butterfly) +
+  annotation_custom(gg_reptile) +
+  annotation_custom(gg_insects)
+
+ggsave(gg_withpics, filename = "power-spectrum-with-lifespan_Loblolly-Marsh_with-pics.png", path = "./figures", dpi = 300, device = "png", height = 7.47, width = 10.369152)
