@@ -157,9 +157,12 @@ lifespans <- read.csv("./data-raw/species-list_LoblollyMarsh_completed.csv") %>%
   mutate(group = ifelse(group == "Stoneflies", "Other insects", as.character(group))) 
 
 ## choose colours
+cols <- c("#D7191C", "#FDAE61", "#66C2A5", "#E6F598", "#3288BD")
+
 cols <- data.frame(group = unique(lifespans$group)) %>%
-  mutate(colour = c("orange", "darkolivegreen2", "plum", "cadetblue3", "pink2"))
-  ## mutate(colour = brewer.pal(n = 5, name = "Spectral"))
+  mutate(colour = cols)
+  ##mutate(colour = c("orange", "darkolivegreen2", "plum", "cadetblue3", "pink2"))
+  
 
 lifespans <- left_join(lifespans, cols)
 
@@ -221,4 +224,3 @@ spectral %>%
   annotation_custom(gg_insects)
 
 ##ggsave("./figures/sst-spectral-slope-normalred-noise_LoblollyMarsh_fancy.png", width = 6, height = 4)
-
