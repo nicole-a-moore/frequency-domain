@@ -71,7 +71,7 @@ correlation %>%
   ggplot(aes(x = lag, y = correlation)) + geom_line() +
   geom_hline(yintercept = 0) + ylab("Autocorrelation") + xlab("Lag (days)") 
 
-ggsave("./figures/sst-correlogram-eighth_LoblollyMarsh.png", width = 6, height = 3)
+##ggsave("./figures/sst-correlogram-eighth_LoblollyMarsh.png", width = 6, height = 3)
 
 
 ### estimate the spectral density
@@ -131,3 +131,94 @@ p + geom_line(aes(x = x, y = y), data = df, color = "cadetblue",size = 1) +
         axis.text.y = element_blank())
 
 ##ggsave("./figures/sine-waves_LoblollyMarsh.png", width = 6, height = 3)
+
+
+
+
+#####################################################################################
+## making new version of spectral plot with real lifespan data, labels and pictures
+#####################################################################################
+
+## read in lifespans to add
+lifespans <- read.csv("./data-raw/species-list_LoblollyMarsh_completed.csv") %>%
+  mutate(lifespan = as.numeric(ifelse(lifespan == "unk", NA, as.character(lifespan)))) %>%
+  mutate(lifespan = round(lifespan, digits = 0)) %>%
+  mutate(lifespan_minutes = lifespan*24*60) %>%
+  mutate(lifespan_frequency = 1/lifespan_minutes) %>%
+  group_by(group) %>%
+  mutate(group_mean = mean(lifespan, na.rm=TRUE)) %>%
+  arrange(desc(group_mean)) %>% 
+  ungroup() %>%
+  filter(!is.na(lifespan)) %>%
+  mutate(group = ifelse(group == "Damselflies", "Damselflies & Dragonflies", as.character(group))) %>%
+  mutate(group = ifelse(group == "Dragonflies", "Damselflies & Dragonflies", as.character(group))) %>%
+  mutate(group = ifelse(group == "Insects", "Other insects", as.character(group))) %>%
+  mutate(group = ifelse(group == "Bees", "Other insects", as.character(group))) %>%
+  mutate(group = ifelse(group == "Stoneflies", "Other insects", as.character(group))) 
+
+## choose colours
+cols <- data.frame(group = unique(lifespans$group)) %>%
+  mutate(colour = c("orange", "darkolivegreen2", "plum", "cadetblue3", "pink2"))
+  ## mutate(colour = brewer.pal(n = 5, name = "Spectral"))
+
+lifespans <- left_join(lifespans, cols)
+
+## read in and properly colour images
+frog <- as.raster(png::readPNG("./data-raw/frog.png")) 
+frog[frog != "#FFFFFF"] <- lifespans$colour[first(which(lifespans$group=="Amphibia"))]
+frog[frog == "#FFFFFF"] <- "#FFFFFF00"
+gg_frog <- rasterGrob(frog, interpolate=TRUE, x = .225, y = .9, height = 0.15, width = .1)
+
+dragonfly <- as.raster(png::readPNG("./data-raw/dragonfly.png"))
+dragonfly[dragonfly != "#00000000"] <- lifespans$colour[first(which(lifespans$group=="Damselflies & Dragonflies"))]
+gg_dragonfly <- rasterGrob(dragonfly, x = .65, y = .9, height = 0.15, width = .15)
+
+butterfly <- as.raster(png::readPNG("./data-raw/butterfly.png"))
+butterfly[butterfly == "#020202FF"] <- lifespans$colour[first(which(lifespans$group=="Butterflies"))]
+butterfly[butterfly == "#020202F0"] <- lifespans$colour[first(which(lifespans$group=="Butterflies"))]
+butterfly[butterfly == "#47704C00"] <- "#FFFFFF00"
+butterfly[butterfly == "#010101A7"] <- lifespans$colour[first(which(lifespans$group=="Butterflies"))]
+butterfly[butterfly == "#010101D9"] <- lifespans$colour[first(which(lifespans$group=="Butterflies"))]
+butterfly[butterfly == "#010101C2"] <- lifespans$colour[first(which(lifespans$group=="Butterflies"))]
+butterfly[butterfly == "#0000002B"] <- "#FFFFFF00"
+butterfly[butterfly == "#00000086"] <- "#FFFFFF00"
+butterfly[butterfly == "#00000069"] <- "#FFFFFF00"
+butterfly[butterfly == "#0000004E"] <- "#FFFFFF00"
+gg_butterfly <- rasterGrob(butterfly, interpolate=TRUE, x = .35, y = .9, height = 0.15, width = .1)
+
+reptile <- as.raster(png::readPNG("./data-raw/reptile.png")) 
+reptile[reptile != "#00000000"] <- lifespans$colour[first(which(lifespans$group=="Reptilia"))]
+reptile[reptile == "#00000000"] <- "#FFFFFF00"
+gg_reptile <- rasterGrob(reptile, interpolate=TRUE, x = .1, y = .875, height = 0.2, width = .09)
+
+insects <- as.raster(png::readPNG("./data-raw/insect.png")) 
+insects[insects != "#FFFFFF"] <- lifespans$colour[first(which(lifespans$group=="Other insects"))]
+insects[insects == "#FFFFFF"] <- "#FFFFFF00"
+gg_insects <- rasterGrob(insects, interpolate=TRUE, x = .5, y = .9, height = 0.125, width = .125)
+
+
+## plot 
+spectral %>% 
+  ggplot(aes(x = specx, y = specy)) + 
+  annotate("segment", x = lifespans$lifespan_frequency, 
+           xend = lifespans$lifespan_frequency,
+           y = 0, 
+           yend = 100000000,
+           colour = lifespans$colour,
+           size = 0.5) + 
+  geom_line() +
+  scale_y_log10(breaks = c(1, 10, 100, 1000, 10000), limits = c(0.01,100000000), expand = c(0,0)) +
+  scale_x_log10(breaks =  c(0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1), 
+                labels = c("0.000001", "0.00001", "0.0001", "0.001", "0.01", "0.1")) +
+  geom_line() +
+  geom_smooth(method = "lm", se = FALSE, color = "grey") +
+  ylab("Spectral density") +
+  xlab("Frequency (1/minutes)") +
+  annotation_custom(gg_frog) +
+  annotation_custom(gg_dragonfly) +
+  annotation_custom(gg_butterfly) +
+  annotation_custom(gg_reptile) +
+  annotation_custom(gg_insects)
+
+##ggsave("./figures/sst-spectral-slope-normalred-noise_LoblollyMarsh_fancy.png", width = 6, height = 4)
+
