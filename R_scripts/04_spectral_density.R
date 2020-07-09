@@ -201,8 +201,7 @@ gg_insects <- rasterGrob(insects, interpolate=TRUE, x = .5, y = .9, height = 0.1
 
 
 ## plot 
-spectral %>% 
-  ggplot(aes(x = specx, y = specy)) + 
+gg_spectral <- ggplot(spectral, aes(x = specx, y = specy)) + 
   annotate("segment", x = lifespans$lifespan_frequency, 
            xend = lifespans$lifespan_frequency,
            y = 0, 
@@ -223,4 +222,35 @@ spectral %>%
   annotation_custom(gg_reptile) +
   annotation_custom(gg_insects)
 
-##ggsave("./figures/sst-spectral-slope-normalred-noise_LoblollyMarsh_fancy.png", width = 6, height = 4)
+## manually create legend 
+x <- c(55:62)
+
+gg_legend <- ggplot() + 
+  geom_blank() +
+  theme_void() +
+  theme(panel.spacing.x=unit(1, "lines")) +
+  scale_y_continuous(limits = c(75, 75)) +
+  scale_x_continuous(limits = c(50,90)) +
+  geom_line(aes(x=x, y=75, colour = x)) +
+  scale_color_gradientn(colours = unique(lifespans$colour)) +
+  annotate("text", label = "Lifespan of species in community", x = 72, y = 75) +
+  theme(legend.position = "none")
+
+
+lay <- rbind(c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(2,2,2,2,2))
+
+gg_complete <- grid.arrange(gg_spectral, gg_legend, layout_matrix = lay)
+
+##ggsave(gg_complete, path = "./figures", filename = "sst-spectral-slope-normalred-noise_LoblollyMarsh_fancy.png", width = 6, height = 4, device = "png")
