@@ -1,4 +1,3 @@
-# getting some species lifespans in an automated fashion for Loblolly Marsh
 library(tidyverse)
 library(taxize)
 
@@ -52,6 +51,23 @@ species <- species %>%
   mutate(genus = merged$genus) %>%
   mutate(species = merged$species) %>%
   mutate(genus_species = merged$taxa) 
+
+
+## get higher taxonomy
+higher_tax <- tax_name(as.character(unique(species$genus_species)), get = c("phylum","class","order","family"))
+higher_tax <- higher_tax[, -1]
+colnames(higher_tax)[1] <- "genus_species"
+higher_tax <- readRDS("./data-processed/higher-tax_loblolly.rds")
+
+species <- species %>%
+  select(-family) %>%
+  left_join(., higher_tax) %>% ## merge based on genus_species
+  select(genus_species, genus, species, subspecies, phylum, class, 
+         order, family, everything())  ## move columns around
+
+
+## for all taxa where higher taxonomy not found: data filled in manually using a google search 
+
 
 
 amphibs <- species %>%
