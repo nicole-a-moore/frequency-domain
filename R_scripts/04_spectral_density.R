@@ -286,12 +286,12 @@ gg_spectral <- ggplot(spectral, aes(x = specx, y = specy)) +
   annotate("segment", x = ticks$lifespan_frequency, 
            xend = ticks$lifespan_frequency,
            y = 0, 
-           yend = 400000000,
+           yend = 300000000,
            colour = ticks$colour,
            size = 0.5) +
   annotate("text", label = ticks$label, 
            x = ticks$lifespan_frequency,
-           y = 800000000,
+           y = 600000000,
            colour = ticks$colour,
            size = 3) +
   geom_line() +
@@ -340,4 +340,4 @@ lay <- rbind(c(1,1,1,1,1),
 
 gg_complete <- grid.arrange(gg_spectral, gg_legend, layout_matrix = lay)
 
-##ggsave(gg_complete, path = "./figures", filename = "sst-spectral-slope-normalred-noise_LoblollyMarsh_fancy-with-ticks.png", width = 6, height = 4, device = "png")
+## ggsave(gg_complete, path = "./figures", filename = "sst-spectral-slope-normalred-noise_LoblollyMarsh_fancy-with-ticks.png", width = 7, height = 5, device = "png")
