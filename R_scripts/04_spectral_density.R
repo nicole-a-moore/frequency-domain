@@ -1,6 +1,8 @@
 #### Version of colour-of-noise script "04_spectral_density.R" using Loblolly Marsh data
 library(tidyverse)
 library(cowplot)
+library(gridExtra)
+library(grid)
 theme_set(theme_cowplot())
 
 
@@ -254,3 +256,88 @@ lay <- rbind(c(1,1,1,1,1),
 gg_complete <- grid.arrange(gg_spectral, gg_legend, layout_matrix = lay)
 
 ##ggsave(gg_complete, path = "./figures", filename = "sst-spectral-slope-normalred-noise_LoblollyMarsh_fancy.png", width = 6, height = 4, device = "png")
+
+
+
+## another version of plot with some lifespans labelled
+## plot 
+gg_insects <- rasterGrob(insects, interpolate=TRUE, x = .35, y = .825, height = 0.1, width = .1)
+gg_butterfly <- rasterGrob(butterfly, interpolate=TRUE, x = .5, y = .825, height = 0.125, width = .08)
+gg_frog <- rasterGrob(frog, interpolate=TRUE, x = .225, y = .825, height = 0.125, width = .08)
+gg_dragonfly <- rasterGrob(dragonfly, x = .65, y = .825, height = 0.125, width = .125)
+gg_reptile <- rasterGrob(reptile, interpolate=TRUE, x = .1, y = .8, height = 0.175, width = .075)
+
+## 365: 1 year - 17
+## 6: 6 days - 54
+## 30: 1 month - 52
+## 3650: 10 years - 12
+## 14600: 40 years - 2
+## 170: 170 days - 27
+ticks <- lifespans[c(54, 52, 27, 17, 12, 2),] %>%
+  mutate(label = c("6 days", "1 month", "     ~1/2 year", "1 year   ", "10 years", "40 years"))
+
+gg_spectral <- ggplot(spectral, aes(x = specx, y = specy)) + 
+  annotate("segment", x = lifespans$lifespan_frequency, 
+           xend = lifespans$lifespan_frequency,
+           y = 0, 
+           yend = 100000000,
+           colour = lifespans$colour,
+           size = 0.5) + 
+  annotate("segment", x = ticks$lifespan_frequency, 
+           xend = ticks$lifespan_frequency,
+           y = 0, 
+           yend = 400000000,
+           colour = ticks$colour,
+           size = 0.5) +
+  annotate("text", label = ticks$label, 
+           x = ticks$lifespan_frequency,
+           y = 800000000,
+           colour = ticks$colour,
+           size = 3) +
+  geom_line() +
+  scale_y_log10(breaks = c(1, 10, 100, 1000, 10000), limits = c(0.01,1000000000), expand = c(0,0)) +
+  scale_x_log10(breaks =  c(0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1), 
+                labels = c("0.000001", "0.00001", "0.0001", "0.001", "0.01", "0.1")) +
+  geom_line() +
+  geom_smooth(method = "lm", se = FALSE, color = "grey") +
+  ylab("Spectral density") +
+  xlab("Frequency (1/minutes)") +
+  annotation_custom(gg_frog) +
+  annotation_custom(gg_dragonfly) +
+  annotation_custom(gg_butterfly) +
+  annotation_custom(gg_reptile) +
+  annotation_custom(gg_insects) 
+  
+
+## manually create legend 
+x <- c(55:62)
+
+gg_legend <- ggplot() + 
+  geom_blank() +
+  theme_void() +
+  theme(panel.spacing.x=unit(1, "lines")) +
+  scale_y_continuous(limits = c(75, 75)) +
+  scale_x_continuous(limits = c(50,90)) +
+  geom_line(aes(x=x, y=75, colour = x)) +
+  scale_color_gradientn(colours = unique(lifespans$colour)) +
+  annotate("text", label = "Lifespan of species in community", x = 72, y = 75) +
+  theme(legend.position = "none")
+
+
+lay <- rbind(c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(1,1,1,1,1),
+             c(2,2,2,2,2))
+
+gg_complete <- grid.arrange(gg_spectral, gg_legend, layout_matrix = lay)
+
+##ggsave(gg_complete, path = "./figures", filename = "sst-spectral-slope-normalred-noise_LoblollyMarsh_fancy-with-ticks.png", width = 6, height = 4, device = "png")
